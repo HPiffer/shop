@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop/providers/products_provider.dart';
-import 'package:shop/widgets/product_item.dart';
+
+import '../widgets/product_grid_item.dart';
+import '../providers/products.dart';
 
 class ProductGrid extends StatelessWidget {
   final bool showFavoriteOnly;
 
-  const ProductGrid({
-    this.showFavoriteOnly,
-  });
+  ProductGrid(this.showFavoriteOnly);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class ProductGrid extends StatelessWidget {
       itemCount: products.length,
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
         value: products[i],
-        child: ProductItem(),
+        child: ProductGridItem(),
       ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

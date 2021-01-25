@@ -1,6 +1,8 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:shop/providers/cart.dart';
+
+import './cart.dart';
 
 class Order {
   final String id;
@@ -37,6 +39,7 @@ class Orders with ChangeNotifier {
         products: cart.items.values.toList(),
       ),
     );
+
     notifyListeners();
   }
 }

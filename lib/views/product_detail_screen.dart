@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop/providers/product.dart';
+import '../providers/product.dart';
 
-class ProducDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Product product =
@@ -13,7 +13,7 @@ class ProducDetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
+          children: <Widget>[
             Container(
               height: 300,
               width: double.infinity,
@@ -24,7 +24,7 @@ class ProducDetailScreen extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'R\$ ${product.price.toStringAsFixed(2)}',
+              'R\$ ${product.price}',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 20,
@@ -38,7 +38,7 @@ class ProducDetailScreen extends StatelessWidget {
                 product.description,
                 textAlign: TextAlign.center,
               ),
-            )
+            ),
           ],
         ),
       ),
